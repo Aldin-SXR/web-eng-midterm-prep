@@ -1,0 +1,16 @@
+<div class="modal-header">
+        <div class="modal-title" id="modal-title">
+            Delete user {{ user.name + " " + user.surname }}? 
+        </div>
+    </div>
+    <div class="modal-body">
+        Are you sure you want to delete this user?
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="deleteUser(user)">
+            Delete
+        </button>
+        <button class="btn btn-danger" ng-click="cancel()">
+            Cancel
+        </button>
+    </div>

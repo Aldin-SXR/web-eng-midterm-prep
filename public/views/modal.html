@@ -1,0 +1,81 @@
+<div class="modal-header">
+    <div class="modal-title" id="modal-title">
+        Add new user
+    </div>
+</div>
+<div class="modal-body">
+    <form name="userForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter a name:" ng-model="user.name"
+                        required>
+                    <span style="color: red;" ng-show="userForm.name.$dirty && userForm.name.$invalid">
+                        <small class="form-text">Name is required.</small>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="surname">Surname:</label>
+                    <input type="text" class="form-control" name="surname" id="surname" placeholder="Enter a surname:"
+                        ng-model="user.surname" required>
+                    <span style="color: red;" ng-show="userForm.surname.$dirty && userForm.surname.$invalid">
+                        <small class="form-text">Surname is required.</small>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email_address">E-mail:</label>
+                    <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Enter an e-mail:"
+                        ng-model="user.email_address" required>
+                    <span style="color: red;" ng-show="userForm.email_address.$dirty && userForm.email_address.$invalid">
+                        <small ng-show="userForm.email_address.$error.required" class="form-text">E-mail address is
+                            required.</small>
+                        <small ng-show="userForm.email_address.$error.email" class="form-text">Invalid e-mail address.</small>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phone_number">Phone number:</label>
+                    <input type="text" class="form-control" id="phone_number" placeholder="Enter a phone number:"
+                        ng-model="user.phone_number">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" placeholder="Enter an age:" ng-model="user.age">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="gpa">GPA:</label>
+                    <input type="number" class="form-control" id="gpa" placeholder="Enter a GPA:" ng-model="user.gpa">
+                </div>
+            </div>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="enrolled" ng-model="user.enrolled">
+            <label class="form-check-label" for="defaultCheck1">Enrolled?</label>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button ng-hide="user._id" class="btn btn-success" ng-click="submitUser(user)">
+        Add
+    </button>
+    <button ng-show="user._id" class="btn btn-success" ng-click="updateUser(user)">
+            Update
+        </button>
+    <button class="btn btn-danger" ng-click="cancel()">
+        Cancel
+    </button>
+</div>
